@@ -4,10 +4,10 @@
     <div class="container">
       <div class="datos">
         <p type="Cédula"><input v-model="this.cedula" type="text" /></p>
-        <p type="Nombre"><input type="text" /></p>
-        <p type="Apellido"><input type="text" /></p>
-        <p type="Fecha de Nacimiento"><input type="datetime-local" /></p>
-        <p type="Género"><input type="text" /></p>
+        <p type="Nombre"><input v-model="this.nombre" type="text" /></p>
+        <p type="Apellido"><input v-model="this.apellido" type="text" /></p>
+        <p type="Fecha de Nacimiento"><input v-model="this.fechaNaciomiento" type="datetime-local" /></p>
+        <p type="Género"><input v-model="this.genero" type="text" /></p>
       </div>
       <div class="botones">
         <button @click="consultar">Consultar</button>
@@ -25,7 +25,11 @@ import {
 export default {
   data() {
     return {
+      nombre:null,
       cedula: null,
+      genero: null,
+      apellido:null,
+      fechaNaciomiento: null,
     };
   },
   methods: {
@@ -33,8 +37,24 @@ export default {
       console.log(this.cedula);
       const data = await obtenerPorCedulaAxiosFachada(this.cedula);
       console.log(data);
+      console.log(data.nombre);
+      console.log(data.apellido);
+      console.log(data.genero);
+
     },
-    actualizar() {},
+    async actualizar() {
+
+      const bodyEstudiante ={
+        //se construye el objeto que esta vinculado a los inputs 
+        "nombre": this.nombre,
+        "apellido": this.apellido,
+        "fechaNaciomiento": this.fechaNaciomiento,
+        "genero": this.genero,
+      }
+      const data = await  actualizarFachada(this.cedula, bodyEstudiante);
+
+      console.log(data);
+    },
   },
 };
 </script>

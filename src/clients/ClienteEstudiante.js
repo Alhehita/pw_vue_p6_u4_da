@@ -78,24 +78,24 @@ const eliminar = async (cedula) => {
 
 //Aqui si se debe poner el await
 export const obtenerPorCedulaAxiosFachada = async (cedula) => {
-  return await this.obtenerPorCedulaAxios(cedula);
+  return await obtenerPorCedulaAxios(cedula);
 };
 
 export const guardarFachada = async (estudianteBody) => {
-  return await this.guardar(estudianteBody);
+  return await guardar(estudianteBody);
 };
 
 //especificar de manera como esta definida la capacidad
 export const actualizarFachada = async (cedula, estudianteBody) => {
-  return await this.actualizar(cedula, estudianteBody);
+  return await actualizar(cedula, estudianteBody);
 };
 
 export const actualizarParcialFachada = async (cedula, estudianteBody) => {
-  return await this.actualizarParcial(cedula, estudianteBody);
+  return await actualizarParcial(cedula, estudianteBody);
 };
 
 export const eliminarFachada = async (cedula) => {
-  return await this.eliminar(cedula);
+  return await eliminar(cedula);
 };
 
 
