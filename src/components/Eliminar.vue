@@ -3,18 +3,31 @@
     <h2>Estudiante</h2>
     <div class="container">
       <div class="datos">
-        <p type="Cédula"><input type="text" /></p>
+        <p type="Cédula"><input v-model="this.cedula" type="text" /></p>
         
       </div>
       <div class="botones">
-        <button>Eliminar</button>
+        <button @click="eliminar">Eliminar</button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+import { eliminarFachada } from '@/clients/ClienteEstudiante.js';
+export default {
+  data(){
+    return{
+      cedula:null
+    }
+  },
+  methods: {
+    async eliminar(){
+      const data = await eliminarFachada(this.cedula);
+      console.log("elimando");
+    }
+  }
+};
 </script>
 
 <style>
