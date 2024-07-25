@@ -24,7 +24,7 @@ export default {
   methods: {
     async eliminar(){
       const data = await eliminarFachada(this.cedula);
-      console.log("elimando");
+      console.log("eliminado");
     }
   }
 };
