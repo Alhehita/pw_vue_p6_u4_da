@@ -10,12 +10,13 @@ import {createRouter, createWebHashHistory} from 'vue-router'
 import consultaractualizar from '../page/ConsultarActualizarPage.vue'
 import eliminar from '../page/EliminarPage.vue'
 import insertar from '@/page/InsertarPage.vue'
+import notFound from '@/page/NotFoundPage.vue'
 
 import bienvenida from '@/page/BienvenidaPage.vue'
 
 const routes = [
     {
-        path:'/consultaractualizar', //esto va despues del http://localhost:8080
+        path:'/consultaractualizar/:cedula', //esto va despues del http://localhost:8080
         component:consultaractualizar
     },
     {
@@ -29,6 +30,10 @@ const routes = [
     {
         path:'/', //esto va despues del http://localhost:8080
         component:bienvenida,
+    },
+    {
+        path:'/:pathMatch(.*)*',
+        component:notFound
     }
 ]
 

@@ -4,7 +4,7 @@ import axios from "axios"; // para importar las funcionalidades de axios
 
 const obtenerPorCedula = async (cedula) => {
   const data = await fetch(
-    `http://localhost:8080/API/v1.0/Matricula/estudiantes/cedula/${cedula}`
+    `http://localhost:8081/API/v1.0/Matricula/estudiantes/cedula/${cedula}`
   ).then((r) => r.json());
 
   console.log(data);
@@ -16,7 +16,7 @@ const obtenerPorCedula = async (cedula) => {
 const obtenerPorCedulaAxios = async (cedula) => {
   const data = axios
     .get(
-      `http://localhost:8080/API/v1.0/Matricula/estudiantes/cedula/${cedula}`
+      `http://localhost:8081/API/v1.0/Matricula/estudiantes/cedula/${cedula}`
     )
     .then((r) => r.data);
   console.log(data);
@@ -27,7 +27,7 @@ const obtenerPorCedulaAxios = async (cedula) => {
 const guardar = async (estudianteBody) => {
   const data = axios
     .post(
-      `http://localhost:8080/API/v1.0/Matricula/estudiantes`,
+      `http://localhost:8081/API/v1.0/Matricula/estudiantes`,
       estudianteBody
     )
     .then((r) => r.data);
@@ -39,7 +39,7 @@ const guardar = async (estudianteBody) => {
 const actualizar = async (cedula, estudianteBody) => {
   const data = axios
     .put(
-      `http://localhost:8080/API/v1.0/Matricula/estudiantes/cedula/${cedula}`,
+      `http://localhost:8081/API/v1.0/Matricula/estudiantes/cedula/${cedula}`,
       estudianteBody
     )
     .then((r) => r.data);
@@ -52,7 +52,7 @@ const actualizar = async (cedula, estudianteBody) => {
 const actualizarParcial = async (cedula, estudianteBody) => {
   const data = axios
     .patch(
-      `http://localhost:8080/API/v1.0/Matricula/estudiantes/cedula/${cedula}`,
+      `http://localhost:8081/API/v1.0/Matricula/estudiantes/cedula/${cedula}`,
       estudianteBody
     )
     .then((r) => r.data);
@@ -65,7 +65,7 @@ const actualizarParcial = async (cedula, estudianteBody) => {
 const eliminar = async (cedula) => {
   const data = axios
     .delete(
-      `http://localhost:8080/API/v1.0/Matricula/estudiantes/cedula/${cedula}`
+      `http://localhost:8081/API/v1.0/Matricula/estudiantes/cedula/${cedula}`
     )
     .then((r) => r.data);
   console.log(data);

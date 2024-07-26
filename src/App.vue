@@ -1,6 +1,6 @@
 <template>
 
-     
+  <NavBar/>
   <router-view/>
 
 </template>
@@ -10,12 +10,13 @@
 //import Eliminar from "./components/Eliminar.vue";
 //import Insertar from "./components/Insertar.vue";
 //import ConsultarActualizar from "./components/ConsultarActualizar.vue";
-
+import NavBar from './components/NavBar.vue';
 
 export default {
+  
   name: "App",
   components: {
-       
+       NavBar
   },
  
 };

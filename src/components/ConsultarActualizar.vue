@@ -32,6 +32,7 @@ export default {
       fechaNaciomiento: null,
     };
   },
+  
   methods: {
     async consultar() {
       console.log(this.cedula);
@@ -56,6 +57,14 @@ export default {
       console.log(data);
     },
   },
+  created(){
+      console.log(this.$route)
+      console.log(this.$route.params.cedula)
+      if(this.$route.params.cedula !== 'vacio'){
+        this.cedula = this.$route.params.cedula;
+        this.consultar();
+      }
+  },
 };
 </script>
 
@@ -69,6 +78,14 @@ p:before {
 
 button {
   margin: 5px;
-  padding: 5px;
+  padding: 5px 10px; /* Ajusta el padding según lo necesites */
+  height: 30px;
+  width: 90px;
+  border: 1px solid #ffd6ff;
+  border-radius: 3px;
+  background: #b8c0ff;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  text-align: center; /* Asegura que el texto esté centrado */
 }
 </style>

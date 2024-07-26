@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 p:before {
   content: attr(type);
   display: block;
@@ -55,6 +55,15 @@ p:before {
 
 button {
   margin: 5px;
-  padding: 5px;
+  padding: 5px 10px; /* Ajusta el padding según lo necesites */
+  height: 30px;
+  width: 90px;
+  border: 1px solid #ffd6ff;
+  border-radius: 3px;
+  background: #b8c0ff;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  text-align: center; /* Asegura que el texto esté centrado */
 }
+
 </style>
